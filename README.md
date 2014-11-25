@@ -3,7 +3,7 @@ Mega-Site Navigation
 
 A responsive and easy to customize navigation for mega-sites, enriched by subtle CSS animations and support for devices with javascript disabled.
 
-[Article on Cody](http://codyhouse.co/gem/css-mega-site-navigation/)
+[Article on CodyHouse](http://codyhouse.co/gem/css-mega-site-navigation/)
 
 [Demo](http://codyhouse.co/demo/mega-site-navigation/index.html)
 
