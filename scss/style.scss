@@ -946,6 +946,7 @@ Main components
 .cd-overlay {
 	/* shadow layer visible when navigation is active */
 	position: fixed;
+	z-index: 2;
 	height: 100%;
 	width: 100%;
 	top: 0;
@@ -955,16 +956,24 @@ Main components
 	visibility: hidden;
 	opacity: 0;
 	@include backface-visibility(hidden);
-	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
-	-moz-transition: opacity .3s 0s, visibility 0s .3s;
-	transition: opacity .3s 0s, visibility 0s .3s;
+	@include transition(opacity .3s 0s, visibility 0s .3s, transform .3s 0s);
 	
 	&.is-visible {
 		opacity: 1;
 		visibility: visible;
-		-webkit-transition: opacity .3s 0s, visibility 0s 0s;
-		-moz-transition: opacity .3s 0s, visibility 0s 0s;
-		transition: opacity .3s 0s, visibility 0s 0s;
+		@include transition(opacity .3s 0s, visibility 0s 0s, transform .3s 0s);
+	}
+
+	@include MQ(maxL) {
+		&.is-visible {
+			@include transform(translateX(-$nav-width-S));
+		}
+		.nav-on-left &.is-visible {
+			@include transform(translateX($nav-width-S));
+		}
+		&.is-visible.search-is-visible, .nav-on-left &.is-visible.search-is-visible {
+			@include transform(translateX(0));
+		}
 	}
 }
 
