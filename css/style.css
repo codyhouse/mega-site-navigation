@@ -4,8 +4,6 @@ Primary style
 
 -------------------------------- */
 *, *::after, *::before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -112,10 +110,10 @@ Main components
   .cd-main-header {
     height: 80px;
   }
-  .cd-main-header:after {
+  .cd-main-header::after {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
   }
 }
 
@@ -529,10 +527,10 @@ Main components
     overflow: visible;
     background: transparent;
   }
-  .cd-primary-nav:after {
+  .cd-primary-nav::after {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
   }
   .cd-primary-nav.moves-out > li > a {
     /* reset mobile style */
@@ -613,10 +611,10 @@ Main components
     -moz-transition: opacity .3s 0s, visibility 0s 0s;
     transition: opacity .3s 0s, visibility 0s 0s;
   }
-  .cd-primary-nav .cd-secondary-nav:after, .cd-primary-nav .cd-nav-gallery:after, .cd-primary-nav .cd-nav-icons:after {
+  .cd-primary-nav .cd-secondary-nav::after, .cd-primary-nav .cd-nav-gallery::after, .cd-primary-nav .cd-nav-icons::after {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
   }
   .cd-primary-nav .cd-secondary-nav.is-hidden, .cd-primary-nav .cd-nav-gallery.is-hidden, .cd-primary-nav .cd-nav-icons.is-hidden {
     opacity: 0;
@@ -781,6 +779,7 @@ Main components
     height: 80px;
     line-height: 1.2;
     padding: 24px 0 0 85px;
+    position: relative;
   }
   .cd-primary-nav .cd-nav-icons .cd-nav-item:hover {
     background: #f6f6f5;

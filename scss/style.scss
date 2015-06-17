@@ -11,7 +11,7 @@ Primary style
 -------------------------------- */
 
 *, *::after, *::before {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 html {
@@ -744,6 +744,7 @@ Main components
 				height: 80px;
 				line-height: 1.2;
 				padding: 24px 0 0 85px;
+				position: relative;
 
 				&:hover {
 					background: lighten($color-3, 8%);
